@@ -1,0 +1,103 @@
+import 'package:flutter/material.dart';
+
+class MyLogin extends StatefulWidget {
+  const MyLogin({super.key});
+
+  @override
+  State<MyLogin> createState() => _MyLoginState();
+}
+
+class _MyLoginState extends State<MyLogin> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('assets/pattern.png'), fit: BoxFit.cover)),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Stack(
+          children: [
+            Container(
+              padding: const EdgeInsets.only(left: 50, top: 130),
+              child: const Text(
+                'Login to Portal',
+                style: TextStyle(color: Colors.white, fontSize: 33),
+                textAlign: TextAlign.right,
+              ),
+            ),
+            SingleChildScrollView(
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * 0.5,
+                  right: 35,
+                  left: 35),
+              child: Column(
+                children: [
+                  TextField(
+                    decoration: InputDecoration(
+                        fillColor: Colors.grey.shade100,
+                        filled: true,
+                        hintText: 'Email',
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10))),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                        fillColor: Colors.grey.shade100,
+                        filled: true,
+                        hintText: 'Password',
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10))),
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      CircleAvatar(
+                        radius: 30,
+                        backgroundColor: Colors.white,
+                        child: IconButton(
+                            color: const Color(0xff4c505b),
+                            onPressed: () {},
+                            icon: const Icon(Icons.arrow_forward)),
+                      )
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'Sign Up',
+                            style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                fontSize: 15,
+                                color: Color(0xFFFFFFFF)),
+                          )),
+                      TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'Forgot Password?',
+                            style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                fontSize: 15,
+                                color: Color(0xFFFFFFFF)),
+                          )),
+                    ],
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
