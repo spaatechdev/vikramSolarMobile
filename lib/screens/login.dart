@@ -1,4 +1,10 @@
+import 'dart:convert';
+import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:email_validator/email_validator.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:http/http.dart';
+import 'package:vikram_solar/main.dart';
 
 class MyLogin extends StatefulWidget {
   const MyLogin({super.key});
@@ -8,6 +14,44 @@ class MyLogin extends StatefulWidget {
 }
 
 class _MyLoginState extends State<MyLogin> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  String errorMessage = "";
+
+  void login(String email, password) async {
+    if (email == "" || password == "") {
+      setState(() {
+        errorMessage = 'Please fill all the details';
+      });
+    } else if (EmailValidator.validate(email) != true) {
+      setState(() {
+        errorMessage = 'Please enter a valid email address';
+      });
+    } else {
+      try {
+        Response response = await post(
+            Uri.parse('https://vikram-solar.spaatech.net/api/login/'),
+            body: {
+              'email': email,
+              'password': password,
+            });
+        if (response.statusCode == 200) {
+          setState(() {
+            errorMessage = '';
+          });
+          showToastMessage('Logged in Successfully', 'success', 'short');
+        } else {
+          setState(() {
+            errorMessage = jsonDecode(response.body)['detail'];
+          });
+        }
+      } catch (e) {
+        debugPrint(e.toString());
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,7 +77,18 @@ class _MyLoginState extends State<MyLogin> {
                   left: 35),
               child: Column(
                 children: [
+                  if (errorMessage.isNotEmpty)
+                    Text(
+                      errorMessage,
+                      style: TextStyle(
+                        color: Colors.red
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
                   TextField(
+                    controller: emailController,
                     decoration: InputDecoration(
                         fillColor: Colors.grey.shade100,
                         filled: true,
@@ -45,6 +100,7 @@ class _MyLoginState extends State<MyLogin> {
                     height: 30,
                   ),
                   TextField(
+                    controller: passwordController,
                     obscureText: true,
                     decoration: InputDecoration(
                         fillColor: Colors.grey.shade100,
@@ -64,7 +120,10 @@ class _MyLoginState extends State<MyLogin> {
                         backgroundColor: Colors.white,
                         child: IconButton(
                             color: const Color(0xff4c505b),
-                            onPressed: () {},
+                            onPressed: () {
+                              login(emailController.text.toString(),
+                                  passwordController.text.toString());
+                            },
                             icon: const Icon(Icons.arrow_forward)),
                       )
                     ],
