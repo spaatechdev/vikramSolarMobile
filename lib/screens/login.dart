@@ -62,6 +62,14 @@ class _MyLoginState extends State<MyLogin> {
             displayMessage = jsonDecode(response.body)['detail'];
             displayMessageType = 'error';
           });
+        }
+      } catch (e) {
+        debugPrint(e.toString());
+      }
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
@@ -73,6 +81,7 @@ class _MyLoginState extends State<MyLogin> {
           children: [
             Container(
               padding: const EdgeInsets.only(left: 50, top: 130),
+              child: const Text(
                 'Login to Portal',
                 style: TextStyle(color: Colors.white, fontSize: 33),
                 textAlign: TextAlign.right,
@@ -85,6 +94,15 @@ class _MyLoginState extends State<MyLogin> {
                   left: 35),
               child: Column(
                 children: [
+                  if (displayMessage.isNotEmpty)
+                    displayMessageType == 'error' ? 
+                      Text(
+                        displayMessage,
+                        style: TextStyle(
+                          color: Colors.red
+                        ),
+                      )
+                      :
                       Text(
                         displayMessage,
                         style: TextStyle(
@@ -99,6 +117,7 @@ class _MyLoginState extends State<MyLogin> {
                     decoration: InputDecoration(
                         fillColor: Colors.grey.shade100,
                         filled: true,
+                        hintText: 'Email',
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10))),
                   ),
