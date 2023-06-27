@@ -4,9 +4,9 @@ import 'package:vikram_solar/screens/login.dart';
 
 void main() async {
   runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
+    // debugShowCheckedModeBanner: false,
     initialRoute: 'login',
-    routes: {'login': (context) => const MyLogin()},
+    routes: {'login': (context) => const Login()},
   ));
 }
 

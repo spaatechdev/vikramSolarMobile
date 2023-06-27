@@ -8,14 +8,14 @@ import 'package:vikram_solar/main.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class MyLogin extends StatefulWidget {
-  const MyLogin({super.key});
+class Login extends StatefulWidget {
+  const Login({super.key});
 
   @override
-  State<MyLogin> createState() => _MyLoginState();
+  State<Login> createState() => _LoginState();
 }
 
-class _MyLoginState extends State<MyLogin> {
+class _LoginState extends State<Login> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
