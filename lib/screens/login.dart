@@ -24,7 +24,7 @@ class _MyLoginState extends State<MyLogin> {
 
   void login(String email, password) async {
     await dotenv.load(fileName: "lib/.env");
-    
+
     displayMessage = '';
     displayMessageType = '';
     if (email == "" || password == "") {
@@ -95,23 +95,18 @@ class _MyLoginState extends State<MyLogin> {
               child: Column(
                 children: [
                   if (displayMessage.isNotEmpty)
-                    displayMessageType == 'error' ? 
-                      Text(
-                        displayMessage,
-                        style: TextStyle(
-                          color: Colors.red
-                        ),
-                      )
-                      :
-                      Text(
-                        displayMessage,
-                        style: TextStyle(
-                          color: Colors.green
-                        ),
-                      ),
-                    const SizedBox(
-                      height: 10,
-                    ),
+                    displayMessageType == 'error'
+                        ? Text(
+                            displayMessage,
+                            style: const TextStyle(color: Colors.red),
+                          )
+                        : Text(
+                            displayMessage,
+                            style: const TextStyle(color: Colors.green),
+                          ),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   TextField(
                     controller: emailController,
                     decoration: InputDecoration(

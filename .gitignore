@@ -45,3 +45,9 @@ app.*.map.json
 
 # Env file
 *.env
+android/
+build/
+ios/
+linux/
+web/
+windows/

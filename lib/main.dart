@@ -10,14 +10,15 @@ void main() async {
   ));
 }
 
-showToastMessage(String message, [message_type='', length = '']) => {
+showToastMessage(String message, [messageType = '', length = '']) => {
       if (length == 'short')
         {
           Fluttertoast.showToast(
               msg: message,
               toastLength: Toast.LENGTH_SHORT,
               gravity: ToastGravity.BOTTOM,
-              backgroundColor: message_type == "success" ? Colors.green : Colors.red )
+              backgroundColor:
+                  messageType == "success" ? Colors.green : Colors.red)
         }
       else
         {
@@ -25,6 +26,7 @@ showToastMessage(String message, [message_type='', length = '']) => {
               msg: message,
               toastLength: Toast.LENGTH_LONG,
               gravity: ToastGravity.BOTTOM,
-              backgroundColor: message_type == "success" ? Colors.green : Colors.red)
+              backgroundColor:
+                  messageType == "success" ? Colors.green : Colors.red)
         }
     };
