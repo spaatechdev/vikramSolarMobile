@@ -7,6 +7,7 @@ import 'package:http/http.dart';
 import 'package:vikram_solar/main.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vikram_solar/screens/admin_dashboard.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -57,6 +58,10 @@ class _LoginState extends State<Login> {
           SharedPreferences prefs = await SharedPreferences.getInstance();
           await prefs.setString('accessToken', accessToken);
           showToastMessage('Logged in Successfully', 'success', 'short');
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => AdminDashboard()),
+          );
         } else {
           setState(() {
             displayMessage = jsonDecode(response.body)['detail'];
