@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:vikram_solar/screens/login.dart';
 
-void main() {
+void main() async {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     initialRoute: 'login',
