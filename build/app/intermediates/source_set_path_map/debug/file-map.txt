@@ -2,11 +2,13 @@ com.example.vikram_solar.app-jetified-window-1.0.0-beta04-0 C:\Users\CHIRANJIT B
 com.example.vikram_solar.app-jetified-annotation-experimental-1.1.0-1 C:\Users\CHIRANJIT BEJ\.gradle\caches\transforms-3\6c0c163cc77ae6c91f9f7dfcd179c29c\transformed\jetified-annotation-experimental-1.1.0\res
 com.example.vikram_solar.app-core-1.6.0-2 C:\Users\CHIRANJIT BEJ\.gradle\caches\transforms-3\7e9df2ac2213a6bd3cef0f2f27870d79\transformed\core-1.6.0\res
 com.example.vikram_solar.app-jetified-window-java-1.0.0-beta04-3 C:\Users\CHIRANJIT BEJ\.gradle\caches\transforms-3\ae81e06d24c799147c26814497a2a305\transformed\jetified-window-java-1.0.0-beta04\res
-com.example.vikram_solar.app-debug-4 D:\TASK\Projects\vikram_solar\android\app\src\debug\res
-com.example.vikram_solar.app-main-5 D:\TASK\Projects\vikram_solar\android\app\src\main\res
-com.example.vikram_solar.app-pngs-6 D:\TASK\Projects\vikram_solar\build\app\generated\res\pngs\debug
-com.example.vikram_solar.app-resValues-7 D:\TASK\Projects\vikram_solar\build\app\generated\res\resValues\debug
-com.example.vikram_solar.app-rs-8 D:\TASK\Projects\vikram_solar\build\app\generated\res\rs\debug
-com.example.vikram_solar.app-mergeDebugResources-9 D:\TASK\Projects\vikram_solar\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
-com.example.vikram_solar.app-mergeDebugResources-10 D:\TASK\Projects\vikram_solar\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
-com.example.vikram_solar.app-merged_res-11 D:\TASK\Projects\vikram_solar\build\app\intermediates\merged_res\debug
+com.example.vikram_solar.app-debug-4 D:\TASK\Projects\vikramSolarMobile\android\app\src\debug\res
+com.example.vikram_solar.app-main-5 D:\TASK\Projects\vikramSolarMobile\android\app\src\main\res
+com.example.vikram_solar.app-pngs-6 D:\TASK\Projects\vikramSolarMobile\build\app\generated\res\pngs\debug
+com.example.vikram_solar.app-resValues-7 D:\TASK\Projects\vikramSolarMobile\build\app\generated\res\resValues\debug
+com.example.vikram_solar.app-rs-8 D:\TASK\Projects\vikramSolarMobile\build\app\generated\res\rs\debug
+com.example.vikram_solar.app-mergeDebugResources-9 D:\TASK\Projects\vikramSolarMobile\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.example.vikram_solar.app-mergeDebugResources-10 D:\TASK\Projects\vikramSolarMobile\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.example.vikram_solar.app-merged_res-11 D:\TASK\Projects\vikramSolarMobile\build\app\intermediates\merged_res\debug
+com.example.vikram_solar.app-packaged_res-12 D:\TASK\Projects\vikramSolarMobile\build\fluttertoast\intermediates\packaged_res\debug
+com.example.vikram_solar.app-packaged_res-13 D:\TASK\Projects\vikramSolarMobile\build\shared_preferences_android\intermediates\packaged_res\debug

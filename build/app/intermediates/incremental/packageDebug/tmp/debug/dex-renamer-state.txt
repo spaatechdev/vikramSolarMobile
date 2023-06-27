@@ -1,4 +1,4 @@
-#Tue Jun 20 10:48:30 IST 2023
-base.0=D\:\\TASK\\Projects\\vikram_solar\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Tue Jun 27 15:22:47 IST 2023
+base.0=D\:\\TASK\\Projects\\vikramSolarMobile\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
