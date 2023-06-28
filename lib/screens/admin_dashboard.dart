@@ -17,7 +17,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
       child: const Text(
         'Dashboard',
         style: TextStyle(color: Colors.white, fontSize: 33),
-        textAlign: TextAlign.right,
+        textAlign: TextAlign.center,
       ),
     );
   }

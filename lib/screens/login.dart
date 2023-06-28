@@ -25,7 +25,7 @@ class _LoginState extends State<Login> {
 
   void login(String email, password) async {
     await dotenv.load(fileName: "lib/.env");
-
+    
     displayMessage = '';
     displayMessageType = '';
     if (email == "" || password == "") {
@@ -40,16 +40,16 @@ class _LoginState extends State<Login> {
       });
     } else {
       try {
-        debugPrint(dotenv.env['SERVER_URL']);
-        debugPrint(dotenv.env['LOGIN_PATH']);
+        String loginUrl = (dotenv.env['SERVER_URL'].toString() + dotenv.env['LOGIN_PATH'].toString()).trim();
         Response response = await post(
-            Uri.parse('https://vikram-solar.spaatech.net/api/login/'),
-            // Uri.parse(dotenv.env['SERVER_URL'] + dotenv.env['LOGIN_PATH'];),
-            body: {
-              'email': email,
-              'password': password,
-            });
+          Uri.parse(loginUrl),
+          body: {
+            'email': email,
+            'password': password,
+          });
+        debugPrint(response.statusCode.toString());
         if (response.statusCode == 200) {
+          debugPrint(response.body);
           setState(() {
             displayMessage = '';
             displayMessageType = '';
